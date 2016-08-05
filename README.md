@@ -1,14 +1,8 @@
-# node-lambda-template
+# NT Electorate Finder
 
-![node-lambda-template](../master/node-lambda-template.png?raw=true)
+This is a simple AWS Lambda app using the [node-lambda-template](../master/node-lambda-template.png?raw=true)
+to allow a user to find which NT 2016 electorate they are in.
 
-The bare minimum for a node.js app running on [Amazon Lambda](http://aws.amazon.com/lambda/).
-
-It uses [node-lambda](https://github.com/rebelmail/node-lambda) under the hood to locally run and also deploy your node.js Amazon Lambda application.
-
-```
-./node_modules/.bin/node-lambda run
-```
 
 ## Usage
 

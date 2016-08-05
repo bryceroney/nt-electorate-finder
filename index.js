@@ -1,10 +1,17 @@
-// For development/testing purposes
 exports.handler = function( event, context ) {
-  console.log( "Running index.handler" );
-  console.log( "==================================");
-  console.log( "event", event );
-  console.log( "==================================");
-  console.log( "Stopping index.handler" );
-  context.done( );
+var turf = require('turf');
+var ntElectorates = require('./nt_elec');
+
+var coords = [parseFloat(event.long), parseFloat(event.lat)];
+var features = [turf.point(coords)];
+var fc = turf.featureCollection(features);
+
+var tagged = turf.tag(fc, ntElectorates, 'Name');
+
+// Return first feature
+var electorate = tagged.features[0].properties.undefined;
+console.log("Returned result of " + electorate);
+context.done(null, electorate);
+
 }
 
